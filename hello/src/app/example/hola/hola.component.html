@@ -1,1 +1,14 @@
 <p>hola works!</p>
+
+<div *ngIf="sensores.length > 0">
+    <h3>Lista de Sensores</h3>
+    <ul>
+      <li *ngFor="let sensor of sensores">
+        {{ sensor.nombre }} - Temperatura: {{ sensor.temperatura }}°C - Humedad: {{ sensor.humedad }}%
+      </li>
+    </ul>
+  </div>
+
+<div *ngIf="sensores.length === 0">
+    <p>No se encontraron sensores.</p>
+</div>
