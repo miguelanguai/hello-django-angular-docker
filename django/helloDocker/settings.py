@@ -32,6 +32,13 @@ ALLOWED_HOSTS = ['localhost', '*']
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
     "http://127.0.0.1:4200",
+    "http://angular-nginx:80", # Nombre del servicio de Angular en Docker
+]
+
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'Authorization',
+    'X-Requested-With',
 ]
 
 
