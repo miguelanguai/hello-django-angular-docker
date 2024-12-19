@@ -93,11 +93,11 @@ WSGI_APPLICATION = 'helloDocker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'vituclim',
         'USER': 'myuser',
         'PASSWORD': 'mypassword',
-        'HOST': 'localhost',
+        'HOST': 'postgre',
         'PORT': '5432',
     }
 }
