@@ -32,6 +32,7 @@ services:
 
   # Servicio de base de datos
   db:
+    container_name: postgre
     image: postgres:latest
     environment:
       POSTGRES_DB: vituclim
