@@ -23,15 +23,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=-l6ot=2x75b!kpn^4s7-ro9ex7uywzne916&#!hgr*e$^+zu^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '*']
 
 
 # CORS
 CORS_ALLOWED_ORIGINS = [
+    "http://localhost",
     "http://localhost:4200",
+    "http://localhost:80",
     "http://127.0.0.1:4200",
+    "http://angular-nginx",
     "http://angular-nginx:80", # Nombre del servicio de Angular en Docker
 ]
 
