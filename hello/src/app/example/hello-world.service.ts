@@ -8,7 +8,7 @@ import { Sensor } from './sensor';
 })
 export class HelloWorldService {
 
-  private nombreContenedorDjango = 'api'
+  private nombreContenedorDjango = 'localhost'
 
   private apiUrl = 'http://'+this.nombreContenedorDjango+':8000/api'; // URL del backend
 
@@ -19,6 +19,6 @@ export class HelloWorldService {
   }
 
   getSensores(): Observable<Sensor[]> {
-    return this.http.get<any>(`${this.apiUrl}/sensor`);
+    return this.http.get<any>(`${this.apiUrl}/sensores/`);
   }
 }
