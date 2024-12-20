@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views
+from .views import SensorListView
 
 urlpatterns = [
-    path('sensor/', views.getSensores),
+    path('sensores/', SensorListView.as_view(), name='sensor-list'),
 ]
