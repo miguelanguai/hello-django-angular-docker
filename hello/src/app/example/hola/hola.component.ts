@@ -18,6 +18,8 @@ export class HolaComponent implements OnInit {
 
   sensores: any[] = [];  // Array para almacenar los sensores
 
+  message: string = '';
+
   constructor(private helloWorldService: HelloWorldService) {}
 
   ngOnInit(): void {
@@ -34,5 +36,16 @@ export class HolaComponent implements OnInit {
         console.error('Error al obtener sensores:', error);
       }
     );
+  }
+
+  fetchMensaje():void{
+    this.helloWorldService.getMessage().subscribe({
+      next: (data: { message: string })=>{
+        this.message=data.message;
+      },
+      error: (error) =>{
+        console.error("Error al objetner el mensaje: ", error);
+      }
+    })
   }
 }

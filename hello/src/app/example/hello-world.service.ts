@@ -8,14 +8,14 @@ import { Sensor } from './sensor';
 })
 export class HelloWorldService {
 
-  private nombreContenedorDjango = 'localhost'
+  private nombreContenedorDjango = 'api'
 
   private apiUrl = 'http://'+this.nombreContenedorDjango+':8000/api'; // URL del backend
 
   constructor(private http: HttpClient) {}
 
-  getMessage(): Observable<string> {
-    return this.http.get(this.apiUrl, { responseType: 'text' }); // Petición de texto
+  getMessage(): Observable<{message: string}> {
+    return this.http.get<{message: string}>(`${this.apiUrl}/mensaje/`);
   }
 
   getSensores(): Observable<Sensor[]> {
