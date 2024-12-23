@@ -8,7 +8,7 @@ import { Sensor } from './sensor';
 })
 export class HelloWorldService {
 
-  private nombreContenedorDjango = 'api'
+  private nombreContenedorDjango = 'localhost'
 
   private apiUrl = 'http://'+this.nombreContenedorDjango+':8000/api'; // URL del backend
 
