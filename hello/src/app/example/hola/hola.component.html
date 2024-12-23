@@ -4,7 +4,7 @@
     <h3>Lista de Sensores</h3>
     <ul>
       <li *ngFor="let sensor of sensores">
-        {{ sensor.nombre }} - Temperatura: {{ sensor.temperatura }}°C - Humedad: {{ sensor.humedad }}%
+        {{ sensor.name }} - Temperatura: {{ sensor.value }} {{sensor.unit}}
       </li>
     </ul>
   </div>
