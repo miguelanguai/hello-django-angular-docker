@@ -24,13 +24,14 @@ export class HolaComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchSensores();  // Llamamos al método fetchSensores cuando el componente se inicializa
+    this.fetchMensaje();
   }
 
   // Método para obtener los sensores del servicio
   fetchSensores(): void {
     this.helloWorldService.getSensores().subscribe(
       (data: Sensor[]) => {
-        this.sensores = data;
+        this.sensores = data;        
       },
       (error) => {
         console.error('Error al obtener sensores:', error);
@@ -41,7 +42,7 @@ export class HolaComponent implements OnInit {
   fetchMensaje():void{
     this.helloWorldService.getMessage().subscribe({
       next: (data: { message: string })=>{
-        this.message=data.message;
+        this.message=data.message;        
       },
       error: (error) =>{
         console.error("Error al objetner el mensaje: ", error);
