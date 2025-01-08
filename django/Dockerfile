@@ -16,6 +16,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copiar el resto de los archivos del proyecto
 COPY . /app/
 
+# Archivos estáticos (para los estilos)
+RUN python manage.py collectstatic --noinput
+
 # Exponer el puerto donde Gunicorn servirá la app
 EXPOSE 8000
 

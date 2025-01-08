@@ -11,6 +11,7 @@ services:
     volumes:
       - ./hello/nginx.conf:/etc/nginx/nginx.conf:ro  # Monta tu configuración personalizada
       - ./hello/dist/hello/browser:/usr/share/nginx/html  # Archivos estáticos generados por Angular. Necesarios para la busqueda de componentes más alla del index. Le retiro el :ro
+      - static_volume:/usr/share/nginx/html/static # Archivos estáticos de django (admin)
     depends_on:
       - db  # Opcional, si tienes otros servicios que dependan de Angular (como una API o BD)
   
@@ -22,6 +23,7 @@ services:
     command: gunicorn helloDocker.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - ./django:/app
+      - static_volume:/app/static # Archivos estáticos de django (admin)
     ports:
       - "8000:8000"
     environment:
@@ -44,3 +46,4 @@ services:
 
 volumes:
   db_data:
+  static_volume:
