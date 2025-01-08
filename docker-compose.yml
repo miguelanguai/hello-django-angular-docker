@@ -24,8 +24,8 @@ services:
     volumes:
       - ./django:/app
       - static_volume:/app/static # Archivos estáticos de django (admin)
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
     environment:
       - DEBUG=False
       - DJANGO_SECRET_KEY=your_secret_key
