@@ -22,12 +22,6 @@ FROM nginx:alpine
 # Copia el archivo de configuración de Nginx
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
-# Copia los archivos generados en la etapa de construcción al servidor Nginx (añadido src en origen)
-# COPY --from=build hello/dist/hello/browser /usr/share/nginx/html
-
-# Cambiar permisos de los archivos copiados para que Nginx pueda leerlos
-# RUN chmod -R 755 /usr/share/nginx/html
-
 # Expone el puerto 80 para el servidor Nginx
 EXPOSE 80
 
