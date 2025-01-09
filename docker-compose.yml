@@ -1,4 +1,4 @@
-version: '3.8'
+name: django-postgre-angular-nginx
 
 services:
   # Servicio Angular con Nginx
